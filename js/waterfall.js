@@ -20,6 +20,13 @@
         core_tech: 'javascript mobile',
         description: '使用组件式开发webapp,依托于fullpage.js,开发全站，构建页面只需要链式调用添加内容即可，里面使用canvas+javascript封装了常用图表组件，环图，柱图，饼图，可复用性高。'
     },{
+        demo_link: 'http://www.luoxuting.cn/project/sellapp.html',
+        img_link: 'http://oe9d5k8dj.bkt.clouddn.com/sell_app.png',
+        code_link: 'https://github.com/findwisdom/vue-sell-app',
+        title: 'VUE2.0 饿了么APP',
+        core_tech: 'VUE2.O Javascript better-scroll sass webpack',
+        description: '使用VUE2.O Javascript better-scroll sass webpack等技术制作的高仿饿了么外卖APP'
+    },{
         demo_link: 'http://find_wisdom.coding.me/canvas_times',
         img_link: 'http://oe9d5k8dj.bkt.clouddn.com/canvas_time1111.jpg',
         code_link: 'https://github.com/findwisdom/canvs_time',
