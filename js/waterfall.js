@@ -21,7 +21,7 @@
         description: '使用组件式开发webapp,依托于fullpage.js,开发全站，构建页面只需要链式调用添加内容即可，里面使用canvas+javascript封装了常用图表组件，环图，柱图，饼图，可复用性高。'
     },{
         demo_link: 'http://www.luoxuting.cn/project/sellapp.html',
-        img_link: 'http://oe9d5k8dj.bkt.clouddn.com/sell_app.png',
+        img_link: 'http://oe9d5k8dj.bkt.clouddn.com/vue2.0%20%E9%A5%BF%E4%BA%86%E4%B9%88.png',
         code_link: 'https://github.com/findwisdom/vue-sell-app',
         title: 'VUE2.0 饿了么APP',
         core_tech: 'VUE2.O Javascript better-scroll sass webpack',
