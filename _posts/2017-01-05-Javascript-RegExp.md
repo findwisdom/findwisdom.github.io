@@ -20,7 +20,7 @@ ECMAScript 通过 RegExp 类型来支持正则表达式，于是今天就好好�
 
 
 
-## 1.RegExp 类型：
+## (一) RegExp 类型：
 
 ### 1.1 字面量形式定义正则表达式
 
@@ -77,7 +77,7 @@ ECMAScript 通过 RegExp 类型来支持正则表达式，于是今天就好好�
 
 在此， pattern1 和 pattern2 是两个完全等价的正则表达式。
 
-## 2. RegExp对象
+## (二) RegExp对象
 
 ### 2.1 RegExp对象方法：
 
@@ -151,7 +151,7 @@ RegExp 的每个实例都具有下列属性，通过这些属性可以取得有�
     alert(pattern2.lastIndex); //0
     alert(pattern2.source); //"\[bc\]at"
 
-## 3. JS的正则基础语法
+## (三) JS的正则基础语法
 
 正则表达式是有两种字符模式组成：“普通字符”、"元字符"。通过这两种字符模式的结合使用，可以编写出符合我们要求的正则规则。
 
