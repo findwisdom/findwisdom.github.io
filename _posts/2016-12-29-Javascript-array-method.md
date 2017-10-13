@@ -20,16 +20,16 @@ author: wisdom
 除了 Object 之外， Array 类型恐怕是 ECMAScript 中最常用的类型了。与其他语言不同的是，ECMAScript 数组的每一项可以保存任何类型的数据。
 
 
-### 1.创建数组：
+### （一）创建数组：
 
 创建数组的基本方式有两种。第一种是使用 Array 构造函数，一种是数组字面量方法
 
-#### 1.1使用 Array 构造函数创建数组：
+#### 使用 Array 构造函数创建数组：
 
     var colors = new Array(3); // 创建一个包含 3 项的数组
     var names = new Array("Greg"); // 创建一个包含 1 项，即字符串"Greg"的数组
 
-#### 1.2使用数组字面量方法创建数组
+#### 使用数组字面量方法创建数组
 
     var colors = ["red", "blue", "green"]; // 创建一个包含 3 个字符串的数组
     var names = []; // 创建一个空数组
@@ -37,7 +37,7 @@ author: wisdom
     var options = [,,,,,]; // 不要这样！这样会创建一个包含 5 或 6 项的数组
 
 
-### 2.读取和设置数组的值：
+### （二）读取和设置数组的值：
 
 读取和设置数组的值时，要使用方括号并提供相应值的基于 0 的数字索引：
 
@@ -52,7 +52,7 @@ author: wisdom
 
 访问数组未定义的索引则返回undefined。
 
-### 3.检测数组
+### （三）检测数组
 
 ECMAScript 5 新增了 Array.isArray() 方法。这个方法的目的是最终确定某个值到底是不是数组，而不管它是在哪个全局执行环境中创建的。这个方法的用法如下：
 
@@ -62,15 +62,15 @@ ECMAScript 5 新增了 Array.isArray() 方法。这个方法的目的是最终�
 
 支持 Array.isArray() 方法的浏览器有 IE9+、Firefox 4+、Safari 5+、Opera 10.5+和 Chrome。
 
-### 4.转换方法
+### （四）转换方法
 
 所有对象都具有 toLocaleString() 、 toString() 和 valueOf() 方法，数组亦是对象。
 
-#### 4.1 toString()
+#### toString()
 
 方法会返回由数组中每个值的字符串形式拼接而成的一个以逗号分隔的字符串
 
-#### 4.2 valueOf()
+#### valueOf()
 
 返回数组
 
@@ -83,19 +83,19 @@ ECMAScript 5 新增了 Array.isArray() 方法。这个方法的目的是最终�
 
 此处由于 alert() 要接收字符串参数，所以它会在后台调用 toString() 方法，由此会得到与直接调用 toString() 方法相同的结果。
 
-#### 4.3  `toLocaleString()`
+#### `toLocaleString()`
 
 toLocaleString() 方法经常也会返回与 toString() 和 valueOf() 方法相同的值，但也不总是如此。当调用数组的 toLocaleString() 方法时，它也会创建一个数组值的以逗号分隔的字符串。而与前两个方法唯一的不同之处在于，这一次为了取得每一项的值，调用的是每一项的 toLocale-String() 方法，而不是 toString() 方法。
 
-### 5.栈方法
+### （五）栈方法
 
 ECMAScript 数组也提供了一种让数组的行为类似于其他数据结构的方法。
 
-#### 5.1 push() 方法
+#### push() 方法
 
 可以接收任意数量的参数，把它们逐个添加到数组末尾，并返回修改后数组的长度。
 
-#### 5.2 pop() 方法
+#### pop() 方法
 
 可以从数组末尾移除最后一项，减少数组的 length 值，然后返回移除的项。
 
@@ -108,13 +108,13 @@ ECMAScript 数组也提供了一种让数组的行为类似于其他数据结构
     alert(item); //"black"
     alert(colors.length); //2
 
-### 6.队列方法
+### （六）队列方法
 
-#### 6.1 shift() 方法
+#### shift() 方法
 
 能够移除数组中的第一个项并返回该项，同时将数组长度减 1。
 
-#### 6.2 unshift() 方法
+#### unshift() 方法
 
 在数组前端添加任意个项并返回新数组的长度。
 
@@ -129,9 +129,9 @@ ECMAScript 数组也提供了一种让数组的行为类似于其他数据结构
     var count = colors.unshift("red", "blue"); // 推入两项
     alert(count); //3
 
-### 7.重排序方法
+### （七）重排序方法
 
-#### 7.1 reverse() 方法
+#### reverse() 方法
 
 反转数组项的顺序。
 
@@ -139,7 +139,7 @@ ECMAScript 数组也提供了一种让数组的行为类似于其他数据结构
     values.reverse();
     alert(values); //5,4,3,2,1
 
-#### 7.2 sort() 方法
+#### sort() 方法
 
 按升序排列数组项——即最小的值位于最前面，最大的值排在最后面。
 
@@ -163,9 +163,9 @@ sort() 方法可以接收一个比较函数作为参数，以便我们指定哪�
     values.sort(compare);
     alert(values); //0,1,5,10,15
 
-### 8.操作方法
+### （八）操作方法
 
-#### 8.1 concat() 方法
+#### concat() 方法
 
 可以基于当前数组中的所有项创建一个新数组。然后将接收到的参数添加到这个副本的末尾
 
@@ -174,7 +174,7 @@ sort() 方法可以接收一个比较函数作为参数，以便我们指定哪�
     alert(colors); //red,green,blue
     alert(colors2); //red,green,blue,yellow,black,brow
 
-#### 8.2 slice() ，它能够基于当前数组中的一或多个项创建一个新数组。
+#### slice() ，它能够基于当前数组中的一或多个项创建一个新数组。
 
     var colors = ["red", "green", "blue", "yellow", "purple"];
     var colors2 = colors.slice(1);
@@ -182,7 +182,7 @@ sort() 方法可以接收一个比较函数作为参数，以便我们指定哪�
     alert(colors2); //green,blue,yellow,purple
     alert(colors3); //green,blue,yellow
 
-#### 8.3 splice() 方法
+#### splice() 方法
 
 主要用途是向数组的中部插入项
 
@@ -211,18 +211,18 @@ sort() 方法可以接收一个比较函数作为参数，以便我们指定哪�
     alert(colors); // green,red,purple,orange,blue
     alert(removed); // yellow，返回的数组中只包含一项
 
-### 9 位置方法
+###（九）位置方法
 
 indexOf() 和 lastIndexOf() 。这两个方法都接收、两个参数：要查找的项和（可选的）表示查找起点位置的索引。
 
-### 9.1 indexOf() 方法
+### indexOf() 方法
 
 indexOf() 方法从数组的开头（位置 0）开始向后查找
 
     var numbers = [1,2,3,4,5,4,3,2,1];
     alert(numbers.indexOf(4)); //3
 
-### 9.1  lastIndexOf()  方法
+### lastIndexOf()  方法
 
     alert(numbers.lastIndexOf(4)); //5
     alert(numbers.indexOf(4, 4)); //5
@@ -236,7 +236,7 @@ indexOf() 方法从数组的开头（位置 0）开始向后查找
     alert(people.indexOf(person)); //-1
     alert(morePeople.indexOf(person)); //0
 
-### 10 迭代方法
+### （十）迭代方法
 
 ECMAScript 5 为数组定义了 5 个迭代方法。每个方法都接收两个参数：要在_每一项上运行的函数_和_（可选的）运行该函数的作用域对象——影响 this 的值_。
 
@@ -246,11 +246,11 @@ ECMAScript 5 为数组定义了 5 个迭代方法。每个方法都接收两个�
 
 支持下怒啊吧迭代方法的浏览器有IE9+、Firefox 2+、Safari 3+、Opera 9.5+和 Chrome。
 
-#### 10.1 every() 方法
+#### every() 方法
 
 对数组中的每一项运行给定函数，如果该函数对每一项都返回 true ，则返回 true。
 
-#### 10.2 some() 方法
+#### some() 方法
 
 对数组中的每一项运行给定函数，如果该函数对任一项返回 true ，则返回 true 。
 
@@ -267,7 +267,7 @@ ECMAScript 5 为数组定义了 5 个迭代方法。每个方法都接收两个�
     });
     alert(someResult); //true
 
-#### 10.3 forEach() 方法
+#### forEach() 方法
 
 对数组中的每一项运行给定函数。这个方法没有返回值。
 
@@ -276,7 +276,7 @@ numbers.forEach(function(item, index, array){
     //执行某些操作
 });
 
-#### 10.4 filter() 方法
+#### filter() 方法
 
 对数组中的每一项运行给定函数，返回该函数会返回 true 的项组成的数组。
 
@@ -286,7 +286,7 @@ numbers.forEach(function(item, index, array){
     });
     alert(filterResult); //[3,4,5,4,3]
 
-#### 10.5 map() 方法
+#### map() 方法
 
 对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组。
 
@@ -296,7 +296,7 @@ numbers.forEach(function(item, index, array){
     });
     alert(mapResult); //[2,4,6,8,10,8,6,4,2]
 
-#### 11 归并方法
+#### 归并方法
 
 迭代数组的所有项，然后构建一个最终返回的值。
 
@@ -308,7 +308,7 @@ numbers.forEach(function(item, index, array){
 
 第一次迭代发生在数组的第二项上，因此第一个参数是数组的第一项，第二个参数就是数组的第二项。
 
-#### 11.1 reduce() 方法
+#### reduce() 方法
 
 使用 reduce() 方法可以执行求数组中所有值之和的操作
 
@@ -318,7 +318,7 @@ numbers.forEach(function(item, index, array){
     });
     alert(sum); //15
 
-#### 11.2 reduceRight() 方法
+#### reduceRight() 方法
 
 reduceRight() 方法与 reduce() 方法类似，只是执行顺序相反
 
