@@ -35,7 +35,7 @@
         description: '使用Canvas与javascript制作的的小球仿自由落体倒计时动画，响应方式布局，修改可将其改变为多种时间管理工具。'
     }, {
         demo_link: 'https://findwisdom.github.io/slider/',
-        img_link: 'http://oe9d5k8dj.bkt.clouddn.com/slider1111.jpg',
+        img_link: 'http://findwisdom.oss-cn-hongkong.aliyuncs.com/findwisdomDemo/slider1111.jpg?Expires=1557219183&OSSAccessKeyId=TMP.AgEXaYUqxFmqUaoLYKbX_4n01IlTpIsfVInNdQYfvLOrd2O_zuBfU86TtbYnADAtAhRCUjksUh5Evv1sToq6KgBHrqwxBQIVAIHskW5y8w9TTqsxIVcEgvxPo7lB&Signature=IVe9Ke90q9unMRA%2FJ1oDxI5umgI%3D',
         code_link: 'https://github.com/findwisdom/slider',
         title: '渐隐的全屏轮播插件',
         core_tech: 'JQuery CSS3',
