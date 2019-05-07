@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Js继承之构造函数继承"
+title:  "Js之构造函数继承"
 date:   2019-05-07 08:35:05
 categories:  Javascript prototype constructor 继承
 tags: Javascript prototype constructor 继承

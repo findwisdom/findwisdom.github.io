@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Js继承之原型链继承"
+title:  "Js之原型链继承"
 date:   2019-05-06 08:35:05
 categories:  Javascript prototype 继承
 tags: Javascript prototype 继承
