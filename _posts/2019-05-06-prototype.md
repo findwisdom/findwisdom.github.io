@@ -43,11 +43,11 @@ author: wisdom
 
 以上代码定义了一个构造函数 Dog(),  Dog.prototype 指向的原型对象，其自带的属性construtor又指回了 Dog，即  Dog.prototype.constructor == Dog. 实例doggie由于其内部指针指向了该原型对象，所以可以访问到 speak方法。
 
-![enter image description here](http://findwisdom.oss-cn-hongkong.aliyuncs.com/prototype/proptype-constructor.png?Expires=1557147437&OSSAccessKeyId=TMP.AgHnHEHX58itFN1GVYN6Ar6J8su9zHoGwfHE7lRVERPSxDc2sOLPO7-N1v_qMC4CFQCDb1pD5tJtQT3yc7NMJ0GKcNHqsgIVANLfkyZF71FYTz5QLnBMr9qq3BuM&Signature=Ukw8YbEOe3Y%2F3LPYyLOz6OpxsxE%3D)
+![enter image description here](http://findwisdom.oss-cn-hongkong.aliyuncs.com/prototype/proptype-constructor.png)
 
 Dog.prototype 只是一个指针，指向的是原型对象，但是这个原型对象并不特别，它也只是一个普通对象。假设说，这时候，我们让 Dog.protptype 不再指向最初的原型对象，而是另一个类 （Animal）的实例，情况会怎样呢？
 
-![enter image description here](http://findwisdom.oss-cn-hongkong.aliyuncs.com/prototype/proptype-constructor1.png?Expires=1557147585&OSSAccessKeyId=TMP.AgHnHEHX58itFN1GVYN6Ar6J8su9zHoGwfHE7lRVERPSxDc2sOLPO7-N1v_qMC4CFQCDb1pD5tJtQT3yc7NMJ0GKcNHqsgIVANLfkyZF71FYTz5QLnBMr9qq3BuM&Signature=QxIPK0dDf4iXStmvkLEf8BGDOVs%3D)
+![enter image description here](http://findwisdom.oss-cn-hongkong.aliyuncs.com/prototype/proptype-constructor1.png)
 
 ### (二) 原型链
 
@@ -92,7 +92,7 @@ doggie实例指向了Dog的原型对象，可以访问Dog原型对象上的所�
 
 先找animal的实例属性，发现还是没有 superSpeack, 最后去 animal 的原型对象上去找，诶，这才找到。
 
-![enter image description here](http://findwisdom.oss-cn-hongkong.aliyuncs.com/prototype/proptype-constructor3.png?Expires=1557147879&OSSAccessKeyId=TMP.AgHnHEHX58itFN1GVYN6Ar6J8su9zHoGwfHE7lRVERPSxDc2sOLPO7-N1v_qMC4CFQCDb1pD5tJtQT3yc7NMJ0GKcNHqsgIVANLfkyZF71FYTz5QLnBMr9qq3BuM&Signature=7jP2aSaIwJva0El98Qm9GkyDCAY%3D)
+![enter image description here](http://findwisdom.oss-cn-hongkong.aliyuncs.com/prototype/proptype-constructor3.png)
 
 这就说明，我们可以通过原型链的方式，实现 Dog 继承 Animal 的所有属性和方法。
 
