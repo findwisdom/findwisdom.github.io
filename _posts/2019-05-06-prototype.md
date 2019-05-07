@@ -19,7 +19,7 @@ author: wisdom
 
 
 
-## (一) 构造函数、原型与实例之间的关系
+### (一) 构造函数、原型与实例之间的关系
 
 每创建一个函数，该函数就会自动带有一个 `prototype` 属性。`该属性是个指针`，指向了一个`对象`，什么是指针指针就好比学号通过学号我们可以找到对应的学生，假设突然，指针设置 null, 学号重置空了，不要慌，对象还存在，学生也没消失。只是不好找了。
 
@@ -49,7 +49,7 @@ Dog.prototype 只是一个指针，指向的是原型对象，但是这个原型
 
 ![enter image description here](http://findwisdom.oss-cn-hongkong.aliyuncs.com/prototype/proptype-constructor1.png?Expires=1557147585&OSSAccessKeyId=TMP.AgHnHEHX58itFN1GVYN6Ar6J8su9zHoGwfHE7lRVERPSxDc2sOLPO7-N1v_qMC4CFQCDb1pD5tJtQT3yc7NMJ0GKcNHqsgIVANLfkyZF71FYTz5QLnBMr9qq3BuM&Signature=QxIPK0dDf4iXStmvkLEf8BGDOVs%3D)
 
-## (二) 原型链
+### (二) 原型链
 
 前面我们说到，所有的实例有一个内部指针，指向它的原型对象，并且可以访问原型对象上的所有属性和方法。
 
@@ -74,6 +74,8 @@ doggie实例指向了Dog的原型对象，可以访问Dog原型对象上的所�
     }
     //改变Dog的prototype指针，指向一个 Animal 实例
     Dog.prototype = new Animal();
+    // 将构造函数指向到 Dog
+    Dog.prototype.constructor = Dog;
     //上面那行就相当于这么写
     //var animal = new Animal();
     //Dog.prototype = animal;

@@ -83,7 +83,7 @@ ECMAScript 5 新增了 Array.isArray() 方法。这个方法的目的是最终�
 
 此处由于 alert() 要接收字符串参数，所以它会在后台调用 toString() 方法，由此会得到与直接调用 toString() 方法相同的结果。
 
-#### `toLocaleString()`
+#### toLocaleString()
 
 toLocaleString() 方法经常也会返回与 toString() 和 valueOf() 方法相同的值，但也不总是如此。当调用数组的 toLocaleString() 方法时，它也会创建一个数组值的以逗号分隔的字符串。而与前两个方法唯一的不同之处在于，这一次为了取得每一项的值，调用的是每一项的 toLocale-String() 方法，而不是 toString() 方法。
 
