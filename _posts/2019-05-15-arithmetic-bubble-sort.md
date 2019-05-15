@@ -47,4 +47,4 @@ author: wisdom
 
 可查看[代码](https://github.com/findwisdom/arithmetic-js/blob/master/sort/bubbleSort.js) 
 
-![enter image description here](https://findwisdom.oss-cn-hongkong.aliyuncs.com/arithmetic/sort/bubbleSort.png)    
+   
