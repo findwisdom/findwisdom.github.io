@@ -25,6 +25,7 @@ author: wisdom
 **什么时候最慢（Worst Cases）：**
 当输入的数据是反序时（写一个for循环反序输出数据不就行了，干嘛要用你冒泡排序呢，我是闲的吗。。。
 
+```js
     let arr = [9, 3, 1, 4, 2, 7, 8, 6, 5]
     
     function exchangeItem(arr, left, right) {
@@ -44,6 +45,7 @@ author: wisdom
     bubbleSort(arr)
     
     console.log(arr) // [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+```    
 
 可查看[代码](https://github.com/findwisdom/arithmetic-js/blob/master/sort/bubbleSort.js) 
 

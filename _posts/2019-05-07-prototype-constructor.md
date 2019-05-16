@@ -25,6 +25,7 @@ author: wisdom
 
 例子：
 
+```js
     //父类：人
     function Person () {
       this.head = '脑袋瓜子';
@@ -43,6 +44,7 @@ author: wisdom
     
     var stu2 = new Student(1002);
     console.log(stu2.head); //脑袋瓜子
+```    
         
 以上例子，我们通过原型链继承，实现了 Student 类对 Person 类的继承。
 
@@ -64,6 +66,7 @@ author: wisdom
 
 原型对象上`引用类型`(因为引用类型只是一个指针)的值可以通过实例进行修改，致使所有实例共享着的该引用类型的值也会随之改变。
 
+```js
     //父类：人
     function Person () {
       this.head = '脑袋瓜子';
@@ -83,6 +86,7 @@ author: wisdom
     
     var stu2 = new Student(1002);
     console.log(stu2.emotion); //["喜", "怒", "哀", "乐", "愁"]
+```    
     
 这就是单纯的原型链继承的缺点，如果一个实例不小心修改了原型对象上引用类型的值，会导致其它实例也跟着受影响。
 
@@ -96,6 +100,7 @@ author: wisdom
 
 在子类的构造函数中，通过 apply () 或 call ()的形式，调用父类构造函数，以实现继承。
 
+```js
     //父类：人
     function Person () {
       this.head = '脑袋瓜子';
@@ -117,6 +122,7 @@ author: wisdom
     
     var stu2 = new Student(1002);
     console.log(stu2.emotion); //["喜", "怒", "哀", "乐"]
+``` 
     
 在 stu1 = new Student ( ) 构造函数时，是 stu1 调用 Student 方法，所以其内部 this 的值指向的是 stu1, 所以 Person.call ( this ) 就相当于Person.call ( stu1 )。
 
@@ -136,6 +142,7 @@ author: wisdom
 
 例子
 
+```js
     //父类：人
     function Person () {
       this.head = '脑袋瓜子';
@@ -150,6 +157,7 @@ author: wisdom
         console.log('快跑');
       }
     }
+```    
     
 所以，无论是单独使用原型链继承还是借用构造函数继承都有自己很大的缺点，最好的办法是，将两者结合一起使用，发挥各自的优势。
 

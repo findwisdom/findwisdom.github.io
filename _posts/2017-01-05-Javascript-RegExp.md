@@ -38,6 +38,7 @@ ECMAScript 通过 RegExp 类型来支持正则表达式，于是今天就好好�
 
 案例如下：
 
+```js
     /*匹配字符串中所有"at"的实例*/
     var pattern1 = /at/g;
 
@@ -46,13 +47,15 @@ ECMAScript 通过 RegExp 类型来支持正则表达式，于是今天就好好�
 
     /*匹配所有以"at"结尾的 3 个字符的组合，不区分大小写*/
     var pattern3 = /.at/gi;
-
+```
+    
 与其他语言中的正则表达式类似，模式中使用的所有元字符都必须转义。正则表达式中的元字符包括：
 
     ( [ { \ ^ $ | ) ? * + .]}
 
 如果想要匹配字符串中包含的这些字符，就必须对它们进行转义。下面给出几个例子。
 
+```js
     /*匹配第一个"bat"或"cat"，不区分大小写*/
     var pattern1 = /[bc]at/i;
 
@@ -64,16 +67,19 @@ ECMAScript 通过 RegExp 类型来支持正则表达式，于是今天就好好�
 
     /* 匹配所有".at"，不区分大小写*/
     var pattern4 = /\.at/gi;
+```    
 
 ### RegExp 构造函数
 
 * 它接收两个参数：一个是要匹配的字符串模式，另一个是可选的标志字符串。
 
+```js
     /*匹配第一个"bat"或"cat"，不区分大小写*/
     var pattern1 = /[bc]at/i;
 
     /*与 pattern1 相同，只不过是使用构造函数创建的*/
     var pattern2 = new RegExp("[bc]at", "i");
+```    
 
 在此， pattern1 和 pattern2 是两个完全等价的正则表达式。
 
@@ -85,8 +91,10 @@ ECMAScript 通过 RegExp 类型来支持正则表达式，于是今天就好好�
 
 `test 方法`用于测试正则规则在指定的字符串中是否具有符合的匹配结果，如果匹配到则返回true，否则返回false。
 
+```js
     var pattern = /a/;
     console.log(pattern.test('edcba')) // => true
+```    
 
 在非全局的匹配模式下，一旦匹配到符合规则的结果，便会停止执行。
 
@@ -94,34 +102,35 @@ ECMAScript 通过 RegExp 类型来支持正则表达式，于是今天就好好�
 
 在匹配到字符串的末尾后，会从头到尾再重新循环匹配。
 
+```js
     var pattern = /a/g;
     console.log(pattern.test('edcba')) // => true 第一次执行。
     console.log(pattern.test('edcba')) // => false 第二次执行。
     console.log(pattern.test('edcba')) // => true 第三次执行。从头到尾重新循环执行。　　
-
+```
 #### exec()
 
 exec方法可以返回匹配的结果，以及结果在字符串中的索引和下一次匹配的起始位置。如果正则表达式没有匹配到结果，那么返回的值就是 null。
-
+```js
     var result = /a/.exec('abcdaefga');
     result[0] // -> 当前匹配到的结果。
     result.input // -> 进行匹配操作的字符串。
     result.index // -> 当前匹配结果首字母在字符串中的索引
-
+```
 使用exec方法对字符串中的某个结果进行全面匹配，那么正则表达式必须要开启全局模式。在非全局的模式下，exec方法一旦匹配到结果，便会停止执行。
-
+```js
     var pattern = /a/g;
     while(result = pattern.exec('abababab')){
         console.log(result+'index:'+ result.index +' input:'+ result.input);
     }
-
+```
 #### compile()
 
 compile可以重新指定正则实例的规则与修饰符。
-
+```js
     var pattern = /res/i;
     pattern.compile('rp','g') -> /rp/g
-
+```
 ### RegExp 实例属性
 
 RegExp 的每个实例都具有下列属性，通过这些属性可以取得有关模式的各种信息。
@@ -137,7 +146,7 @@ RegExp 的每个实例都具有下列属性，通过这些属性可以取得有�
 * `source` ：正则表达式的字符串表示，按照字面量形式而非传入构造函数中的字符串模式返回。
 
 案例如下：
-
+```js
     var pattern1 = /\[bc\]at/i;
     alert(pattern1.global); //false
     alert(pattern1.ignoreCase); //true
@@ -150,7 +159,7 @@ RegExp 的每个实例都具有下列属性，通过这些属性可以取得有�
     alert(pattern2.multiline); //false
     alert(pattern2.lastIndex); //0
     alert(pattern2.source); //"\[bc\]at"
-
+```
 ## (三) JS的正则基础语法
 
 正则表达式是有两种字符模式组成：“普通字符”、"元字符"。通过这两种字符模式的结合使用，可以编写出符合我们要求的正则规则。
@@ -174,11 +183,11 @@ RegExp 的每个实例都具有下列属性，通过这些属性可以取得有�
 #### 转义运算符
 
 对元字符进行转义，使其转换为普通字符。
-
+```js
     var pattern = /\[/;
     var str = '[]';
     console.log(pattern.test(str)) // -> true;
-
+```
 #### 量词
 
 * `?`：表示匹配0次或1次,相当于 {0,1}，比如：`/a[cd]?/` 可以匹配 "a","ac","ad"
@@ -218,10 +227,10 @@ RegExp 的每个实例都具有下列属性，通过这些属性可以取得有�
 * 反向类
 
 `[^a-z]`：取反匹配。匹配不在这个区间范围内的内容
-
+```js
     var str = 'google';
     var pattern = /[^gle]/;
     console.log(pattern.test(str))
-
+```
 用 `[^ ]` 包含一系列字符，则能够匹配其中字符之外的任意一个字符。同样的道理，虽然可以匹配其中任意一个，但是只能是一个，
 

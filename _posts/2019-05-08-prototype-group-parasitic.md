@@ -27,6 +27,7 @@ author: wisdom
 
 例子：
 
+```js
     //父类：人
     function Person () {
       this.head = '脑袋瓜子';
@@ -63,6 +64,7 @@ author: wisdom
     stu1.eat(); //吃吃喝喝
     stu2.run(); //快跑
     console.log(stu1.constructor);  //Student
+```    
         
 在第一次调用Person构造函数时,Person.prototype会得到两个属性:head和emotion,他们都是Person的实例属性。
 
@@ -80,16 +82,19 @@ author: wisdom
 
 本质上,就是使用寄生式继承来继承父类的原型,然后在将结果指定给子类的原型:
 
-**Object.create()** 方法创建一个新对象，使用现有的对象来提供新创建的对象的`__proto__`。 
-
+**Object.create()** 方法创建一个新对象，使用现有的对象来提供新创建的对象的`__proto__`。
+ 
+```js
     function inheritPrototype(subType,superType){
           var prototype=object(superType.prototype); //创建父类原型的一个副本 等同于使用Object.create(superType.prototype)
           prototype.constructor=subType;   //为副本添加constructor属性,弥补重写原型而失去的constructor属性
           subType.prototype=prototype; //将创建的对象(副本)赋值给子类的原型
     }
+```    
 
 这样,我们就可以通过调用inheritPrototype()函数,替换前面例子中为子类原型的赋值语句了:
 
+```js
     function inheritPrototype(subType,superType){
           var prototype=object(superType.prototype); //创建父类原型的一个副本 等同于使用Object.create(superType.prototype)
           prototype.constructor=subType;   //为副本添加constructor属性,弥补重写原型而失去的constructor属性
@@ -136,6 +141,7 @@ author: wisdom
     alert(stu1 instanceof Person);  //true
     alert(Student.prototype.isPrototypeOf(stu1));  //true
     alert(Person.prototype.isPrototypeOf(stu1)); //true
+```    
     
 这个例子的高效率体现在它只调用了一次Person构造函数,并且因此避免了在Student.prototype上创建不必要的 多余的属性。
 

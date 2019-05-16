@@ -31,6 +31,7 @@ author: wisdom
 
 例子：
 
+```js
     //父类：人
     function Person () {
       this.head = '脑袋瓜子';
@@ -67,6 +68,7 @@ author: wisdom
     stu1.eat(); //吃吃喝喝
     stu2.run(); //快跑
     console.log(stu1.constructor);  //Student
+```    
         
 首先，我们将 Person 类中需要复用的方法提取到 Person.prototype 中，然后设置 Student 的原型对象为 Person 类的一个实例，
 

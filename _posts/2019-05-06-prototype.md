@@ -31,6 +31,7 @@ author: wisdom
 
 例子：
 
+```js
     function Dog (name) {
         this.name = name;
         this.type = 'Dog';
@@ -40,6 +41,7 @@ author: wisdom
     }
     var doggie = new Dog('jiwawa');
     doggie.speak();  //wang
+```
 
 以上代码定义了一个构造函数 Dog(),  Dog.prototype 指向的原型对象，其自带的属性construtor又指回了 Dog，即  Dog.prototype.constructor == Dog. 实例doggie由于其内部指针指向了该原型对象，所以可以访问到 speak方法。
 
@@ -59,6 +61,7 @@ doggie实例指向了Dog的原型对象，可以访问Dog原型对象上的所�
 
 这就是JS通过原型链实现继承的方法了。看下面一个例子：
 
+```js
     //定义一个 Animal 构造函数，作为 Dog 的父类
     function Animal () {
         this.superType = 'Animal';
@@ -83,6 +86,7 @@ doggie实例指向了Dog的原型对象，可以访问Dog原型对象上的所�
     Dog.prototype.speak = function () {
     　　alert(this.type);
     }
+```
 
 解释一下。以上代码，首先定义了一个 Animal 构造函数，通过new Animal()得到实例，会包含一个实例属性 superType 和一个原型属性 superSpeak。
 
