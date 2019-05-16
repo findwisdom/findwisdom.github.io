@@ -187,3 +187,61 @@ console.log(o.f(), o.g()); // 37, test
 ```
 
 绑定之后再调用时，仍然会按绑定时的内容走，所以 o.g() 结果是 test
+
+## 箭头函数中的 this
+
+由于箭头函数不绑定this， 它会捕获其所在（即定义的位置）上下文的this值， 作为自己的this值，
+
+所以 call() / apply() / bind() 方法对于箭头函数来说只是传入参数，对它的 this 毫无影响。
+考虑到 this 是词法层面上的，严格模式中与 this 相关的规则都将被忽略。（可以忽略是否在严格模式下的影响）
+因为箭头函数可以捕获其所在上下文的this值 所以
+
+```js
+    function Person() {  
+        this.age = 0;  
+        setInterval(() => {
+            // 回调里面的 `this` 变量就指向了期望的那个对象了
+            this.age++;
+        }, 3000);
+    }
+    
+    var p = new Person();
+```
+在setTimeout中的this指向了构造函数新生成的对象，而普通函数指向了全局window对象
+```js
+    var adder = {
+      base : 1,
+        
+      add : function(a) {
+        var f = v => v + this.base;
+        return f(a);
+      },
+    
+      addThruCall: function inFun(a) {
+        var f = v => v + this.base;
+        var b = {
+          base : 2
+        };
+                
+        return f.call(b, a);
+      }
+    };
+    
+    console.log(adder.add(1));         // 输出 2
+    console.log(adder.addThruCall(1)); // 仍然输出 2（而不是3，其内部的this并没有因为call() 而改变，其this值仍然为函数inFun的this值，指向对象adder
+```    
+以上的箭头函数都是在方法内部，总之都是以非方法的方式使用，如果将箭头函数当做一个方法使用会怎样呢？
+
+上例子
+```js
+    var obj = {
+      i: 10,
+      b: () => console.log(this.i, this),
+      c: function() {
+        console.log( this.i, this)
+      }
+    }
+    obj.b();  // undefined window{...}
+    obj.c();  // 10 Object {...}
+```
+可以看到，作为方法的箭头函数this指向全局window对象，而普通函数则指向调用它的对象
