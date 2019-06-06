@@ -26,14 +26,12 @@ author: wisdom
 
 ```
     git clone --mirror old.git // old.git 为老项目的git地址
-
 ```
 
 2.进入老项目的目录
 
 ```
     cd old.git
-
 ```
 
 3.移除老项目的地址替换成新项目
@@ -41,14 +39,12 @@ author: wisdom
 
 ```
     git remote set-url --push origin  new.git  //new.git 为新项目的git地址
-
 ```
 
 4.将镜像推到远程
 
 ```
-   git push --mirror  // 这一步需要输入新的git的账号和密码
-
+    git push --mirror  // 这一步需要输入新的git的账号和密码
 ```
 
 四步就搞定了。
