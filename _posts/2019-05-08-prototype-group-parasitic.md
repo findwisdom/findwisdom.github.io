@@ -2,8 +2,8 @@
 layout: post
 title:  "Js之寄生组合继承"
 date:   2019-05-08 17:35:05
-categories:  Javascript prototype  继承
-tags: Javascript prototype  继承
+categories:  JavasSript prototype  继承
+tags: JavaScript prototype  继承
 author: wisdom
 ---
 

@@ -2,8 +2,8 @@
 layout: post
 title:  " Javascript 的 Array类型方法"
 date:   2016-12-29 08:35:05
-categories:  Javascript Array
-tags: Javascript Array
+categories:  JavaScript Array
+tags: JavaScript Array
 author: wisdom
 ---
 

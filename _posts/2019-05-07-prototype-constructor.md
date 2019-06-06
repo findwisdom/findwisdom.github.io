@@ -2,8 +2,8 @@
 layout: post
 title:  "Js之构造函数继承"
 date:   2019-05-07 08:35:05
-categories:  Javascript prototype constructor 继承
-tags: Javascript prototype constructor 继承
+categories:  JavaScript prototype constructor 继承
+tags: JavaScript prototype constructor 继承
 author: wisdom
 ---
 

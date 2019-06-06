@@ -2,8 +2,8 @@
 layout: post
 title:  " Javascript 的 RegExp"
 date:   2017-01-05 08:35:05
-categories:  Javascript RegExp
-tags: Javascript RegExp
+categories:  JavaScript RegExp
+tags: JavaScript RegExp
 author: wisdom
 ---
 

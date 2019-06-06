@@ -2,8 +2,8 @@
 layout: post
 title:  "Js之原型链继承"
 date:   2019-05-06 08:35:05
-categories:  Javascript prototype 继承
-tags: Javascript prototype 继承
+categories:  JavaScript prototype 继承
+tags: JavaScript prototype 继承
 author: wisdom
 ---
 
