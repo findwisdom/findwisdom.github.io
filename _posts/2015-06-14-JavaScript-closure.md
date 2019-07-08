@@ -3,7 +3,7 @@ layout: post
 title:  "JavaScript 中的闭包"
 date:   2015-06-14 14:06:05
 categories: JavaScript
-tags: JavaScript 闭包 慕课网 ife
+tags: JavaScript 闭包 
 ---
 
 * content
@@ -17,22 +17,24 @@ tags: JavaScript 闭包 慕课网 ife
 
 ## 闭包的例子
 
+```js
     function outer() {
         var localVal = 30;
         return localVal;
     }
-
+    
     console.log(outer()); //30
-
+    
     function outer2() {
         var localVal = 30;
         return function() {
             return localVal;
         };
     }
-
+    
     var func = outer2();
     console.log(func()); //30
+```    
 
 对于第一个普通的函数，在执行过之后，它的局部变量就可以被释放。
 
@@ -44,32 +46,33 @@ tags: JavaScript 闭包 慕课网 ife
 
 * **所谓闭包就是：子函数可以使用父函数中的局部变量。**
 
-        ! function() {
-            var localData = "localData here";
-            document.addEventListener('click',
-                function() {
-                    console.log(localData); //这里访问外部数据
-                });
-        }();
-
-        ! function() {
-            var localData = "localData here";
-            var url = "http://www.baidu.com/";
-            $.ajax({
-                url: url,
-                success: function() {
-                    // do sth...
-                    console.log(localData); //这里访问外部数据
-                }
+```js
+    ! function() {
+        var localData = "localData here";
+        document.addEventListener('click',
+            function() {
+                console.log(localData); //这里访问外部数据
             });
-        }()
+    }();
 
----
+    ! function() {
+        var localData = "localData here";
+        var url = "http://www.baidu.com/";
+        $.ajax({
+            url: url,
+            success: function() {
+                // do sth...
+                console.log(localData); //这里访问外部数据
+            }
+        });
+    }()
+```
 
 ## 常见错误之循环闭包
 
 比如我们想循环绑定点击事件
 
+```js
     document.body.innerHTML = "<div id=div1>aaa</div><div id=div2>bbb</div><div id=div3>ccc</div>";
     for (var i = 1; i < 4; i++) {
         document.getElementById('div' + i).
@@ -77,11 +80,13 @@ tags: JavaScript 闭包 慕课网 ife
             alert(i); // all are 4!
         });
     }
+```    
 
 上面的代码，我们点击任何一个 div，弹出的都是 4
 
 这是因为，for 循环中的 i 是一个全局变量。这里内函数的点击事件，访问到的是循环后的 i 值，所以是 4
 
+```js
     document.body.innerHTML = "<div id=div1>aaa</div><div id=div2>bbb</div><div id=div3>ccc</div>";
     for (var i = 1; i < 4; i++) {
         ! function(i) {
@@ -91,13 +96,15 @@ tags: JavaScript 闭包 慕课网 ife
             });
         }(i);
     }
-
+```
+    
 这里使用了立即执行函数，并给匿名函数赋值 i，这样点击事件每一次就会访问到相应的 i。
 
 ---
 
 ## 封装
 
+```js
     (function() {
         var _userId = 9527;
         var _typeId = "item";
@@ -124,6 +131,7 @@ tags: JavaScript 闭包 慕课网 ife
     console.log(a._userId); //undefined
     console.log(a._typeId); //undefined
     console.log(converter); //Uncaught ReferenceError: converter is not defined
+```    
 
 上面的代码通过闭包实现了一个封装。
 
