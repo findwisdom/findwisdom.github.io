@@ -38,6 +38,8 @@ icon: bookmark
 
 ### JavaScript
 
+* [JavaScript 简单了解JavaScript垃圾回收机制 -芒僧](https://juejin.im/post/5a6b3fcaf265da3e2c385375/)
+
 * [JavaScript 标准参考教程（alpha） -阮一峰](http://javascript.ruanyifeng.com/)
 
 * [JavaScript Promise迷你书 -azu](http://liubin.org/promises-book/)

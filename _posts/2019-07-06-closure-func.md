@@ -119,7 +119,7 @@ onclick的事件是异步触发的, for循环以迅雷不及掩耳的速度执�
           setTimeout(function () {
             console.log('输出内容', i)
           }, 0)
-        })(i)
+        })(i) // 最后输出1, 2, 3, 4, 5 ... 10
       }
     }
     closure1()
