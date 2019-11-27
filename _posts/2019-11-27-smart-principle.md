@@ -12,7 +12,9 @@ author: wisdom
 
 什么叫 `SMART原则`？SMART原则，源自美国马里兰大学管理学及心理学教授洛克。
 
-`S-M-A-R-T`这5个字母，代表`Specific`（具体的），`Measurable`（可衡量的），`Attainable`（可实现的），`Relevant`（相关的），和`Time-Based`（有时间限制的）。
+S-M-A-R-T这5个字母，代表Specific（具体的），Measurable（可衡量的），Attainable（可实现的），Relevant（相关的），和Time-Based（有时间限制的）。
+
+
 
 
 ### (一) SMART原则五式
