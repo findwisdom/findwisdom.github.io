@@ -2,7 +2,7 @@
 layout: post
 title:  "冒泡排序（Bubble Sort）"
 date:   2019-05-15 17:35:05
-categories:  Javascript 算法
+categories:  算法
 tags: JavaScript 算法
 author: wisdom
 ---

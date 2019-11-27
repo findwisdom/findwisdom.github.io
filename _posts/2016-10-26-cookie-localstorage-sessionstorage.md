@@ -2,8 +2,8 @@
 layout: post
 title:  "cookie localstorage 与 sessionstorage 的比较"
 date:   2016-10-26 12:35:05
-categories: cookie localstorage sessionstorage HTML5
-tags: note
+categories: Browser
+tags: cookie localstorage sessionstorage HTML5
 author: wisdom
 ---
 

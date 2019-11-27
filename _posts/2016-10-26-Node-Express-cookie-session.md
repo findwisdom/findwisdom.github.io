@@ -2,7 +2,7 @@
 layout: post
 title:  "Express学习（五）-- Cookie与会话"
 date:   2016-10-27 12:35:05
-categories: cookie Node Express
+categories: Node
 tags: note Node Express
 author: wisdom
 ---

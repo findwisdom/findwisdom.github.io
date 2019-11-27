@@ -2,7 +2,7 @@
 layout: post
 title:  "Express学习（四）-- 表单处理"
 date:   2016-10-25 12:35:05
-categories: Node Express
+categories: Node
 tags:  Node Express note
 author: wisdom
 ---

@@ -2,7 +2,7 @@
 layout: post
 title:  "Express学习（二）-- 掌控你的 Express 项目"
 date:   2016-10-21 20:35:05
-categories: Node Express
+categories: Node
 tags:  Node Express note
 author: wisdom
 ---

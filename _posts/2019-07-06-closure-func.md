@@ -2,7 +2,7 @@
 layout: post
 title:  "闭包与高阶函数"
 date:   2019-07-08 17:35:05
-categories:  闭包 高阶函数
+categories:  JavaScript
 tags: 闭包 高阶函数
 author: wisdom
 ---

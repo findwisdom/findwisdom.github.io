@@ -2,7 +2,7 @@
 layout: post
 title:  "Express学习（三）-- request 与 response"
 date:   2016-10-23 12:35:05
-categories: Node Express
+categories: Node
 tags: Node Express note
 author: wisdom
 ---

@@ -2,7 +2,7 @@
 layout: post
 title:  "Js之组合继承"
 date:   2019-05-08 08:35:05
-categories:  JavaScript prototype  继承
+categories:  JavaScript
 tags: JavaScript prototype  继承
 author: wisdom
 ---
