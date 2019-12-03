@@ -4,7 +4,7 @@
     left: 30px;
     bottom: 0;
     width: 280px;
-    height: 250px;
+    height: 600px;
     z-index: 10000;
     font-size: 0;
     transition: all .3s ease-in-out;
@@ -20,7 +20,7 @@
     height: auto;
     margin: auto;
     padding: 7px;
-    top: -80px;
+    top: 0;
     left: -10px;
     text-align: center;
     border: 1px solid rgba(255,137,255,.4);
@@ -42,7 +42,7 @@
 
 .hide-button {
     position: absolute;
-    top: 10px;
+    top: 60px;
     right: 0;
     /* bottom: 30px; */
     display: none;
