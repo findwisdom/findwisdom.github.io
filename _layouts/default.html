@@ -47,7 +47,7 @@
             if( script.readyState == 'loaded' || script.readyState == 'complete' ){
 
               script.onreadystatechange = null;
-              setTimeout(fn, 100)
+              setTimeout(fn, 1000)
 
             }
 
@@ -58,7 +58,7 @@
           //其他浏览器
 
           script.onload = function(){
-            setTimeout(fn, 100)
+            setTimeout(fn, 1000)
 
           };
 
