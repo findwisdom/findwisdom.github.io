@@ -23,7 +23,7 @@
     <script src="{{ " /js/main.js " | prepend: site.baseurl }}" charset="utf-8"></script>
     <script src="{{ " /js/scroll.min.js " | prepend: site.baseurl }}" charset="utf-8"></script>
 <!--    <script src="{{ " /js/live2d.js" | prepend: site.baseurl }}" charset="utf-8"></script>-->
-    <script src="{{ " /js/message.js" | prepend: site.baseurl }}" charset="utf-8" ></script>
+<!--    <script src="{{ " /js/message.js" | prepend: site.baseurl }}" charset="utf-8" ></script>-->
 
     <script type="text/javascript">
       var isMobile = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
@@ -74,6 +74,7 @@
 
       if (!isMobile && windowWidth < 640) {
             loadJS('/js/live2d.js', loadlive2d("live2d", "https://findwisdom.oss-cn-hongkong.aliyuncs.com/model/violet/14.json"))
+            loadJS('/js/message.js')
       }
     </script>
   </body>
