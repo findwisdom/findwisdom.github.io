@@ -47,8 +47,7 @@
             if( script.readyState == 'loaded' || script.readyState == 'complete' ){
 
               script.onreadystatechange = null;
-
-              fn();
+              setTimeout(fn, 100)
 
             }
 
@@ -59,8 +58,7 @@
           //其他浏览器
 
           script.onload = function(){
-
-            fn();
+            setTimeout(fn, 100)
 
           };
 
@@ -73,15 +71,15 @@
       }
 
       if (!isMobile && windowWidth > 640) {
-            loadJS('/js/live2d.js')
+            loadJS('/js/live2d.js', loadlive2d("live2d", "https://findwisdom.oss-cn-hongkong.aliyuncs.com/model/violet/14.json"))
             loadJS('/js/message.js')
       }
     </script>
-    <script type="text/javascript">
-      setTimeout(function () {
-        loadlive2d("live2d", "https://findwisdom.oss-cn-hongkong.aliyuncs.com/model/violet/14.json")
-      }, 2000)
-    </script>
+<!--    <script type="text/javascript">-->
+<!--      setTimeout(function () {-->
+<!--        loadlive2d("live2d", "https://findwisdom.oss-cn-hongkong.aliyuncs.com/model/violet/14.json")-->
+<!--      }, 2000)-->
+<!--    </script>-->
   </body>
 
 </html>
