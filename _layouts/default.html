@@ -26,7 +26,54 @@
     <script src="{{ " /js/message.js" | prepend: site.baseurl }}" charset="utf-8" ></script>
 
     <script type="text/javascript">
-      loadlive2d("live2d", "https://findwisdom.oss-cn-hongkong.aliyuncs.com/model/violet/14.json");
+      var isMobile = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
+      function loadJS( url, callback ){
+
+        var script = document.createElement('script'),
+
+                fn = callback || function(){};
+
+        script.type = 'text/javascript';
+
+
+
+        //IE
+
+        if(script.readyState){
+
+          script.onreadystatechange = function(){
+
+            if( script.readyState == 'loaded' || script.readyState == 'complete' ){
+
+              script.onreadystatechange = null;
+
+              fn();
+
+            }
+
+          };
+
+        }else{
+
+          //其他浏览器
+
+          script.onload = function(){
+
+            fn();
+
+          };
+
+        }
+
+        script.src = url;
+
+        document.getElementsByTagName('head')[0].appendChild(script);
+
+      }
+
+      if (!isMobile) {
+        loadJs('/js/live2d.js', loadlive2d("live2d", "https://findwisdom.oss-cn-hongkong.aliyuncs.com/model/violet/14.json"))
+      }
     </script>
   </body>
 
