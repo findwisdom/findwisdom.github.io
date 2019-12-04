@@ -16,6 +16,7 @@
       <canvas id="live2d" width="280" height="600" class="live2d"></canvas>
       <div class="hide-button">隐藏</div>
     </div>
+    <script type="text/javascript" src="{{ " /js/LAB.min.js " | prepend: site.baseurl }}" charset="utf-8"></script>
     <script type="text/javascript">
       var message_Path = '/'
       var home_Path = '/'
@@ -28,58 +29,14 @@
     <script type="text/javascript">
       var isMobile = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)
       var windowWidth = $(window).width();
-      function loadJS( url, callback ){
-
-        var script = document.createElement('script'),
-
-                fn = callback || function(){};
-
-        script.type = 'text/javascript';
-
-
-
-        //IE
-
-        if(script.readyState){
-
-          script.onreadystatechange = function(){
-
-            if( script.readyState == 'loaded' || script.readyState == 'complete' ){
-
-              script.onreadystatechange = null;
-              setTimeout(fn, 1000)
-
-            }
-
-          };
-
-        }else{
-
-          //其他浏览器
-
-          script.onload = function(){
-            setTimeout(fn, 1000)
-
-          };
-
-        }
-
-        script.src = url;
-
-        document.getElementsByTagName('head')[0].appendChild(script);
-
-      }
 
       if (!isMobile && windowWidth > 640) {
-            loadJS('/js/live2d.js', loadlive2d("live2d", "https://findwisdom.oss-cn-hongkong.aliyuncs.com/model/violet/14.json"))
-            loadJS('/js/message.js')
+        $LAB
+          .script("https://findwisdom.oss-cn-hongkong.aliyuncs.com/live2d.js").wait(function () {
+            loadlive2d("live2d", "https://findwisdom.oss-cn-hongkong.aliyuncs.com/model/violet/14.json")
+        }).script("/js/message.js")
       }
     </script>
-<!--    <script type="text/javascript">-->
-<!--      setTimeout(function () {-->
-<!--        loadlive2d("live2d", "https://findwisdom.oss-cn-hongkong.aliyuncs.com/model/violet/14.json")-->
-<!--      }, 2000)-->
-<!--    </script>-->
   </body>
 
 </html>
