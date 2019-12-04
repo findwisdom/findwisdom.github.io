@@ -32,9 +32,10 @@
 
       if (!isMobile && windowWidth > 640) {
         $LAB
+          .script("/js/message.js")
           .script("https://findwisdom.oss-cn-hongkong.aliyuncs.com/live2d.js").wait(function () {
             loadlive2d("live2d", "https://findwisdom.oss-cn-hongkong.aliyuncs.com/model/violet/14.json")
-        }).script("/js/message.js")
+        })
       }
     </script>
   </body>
